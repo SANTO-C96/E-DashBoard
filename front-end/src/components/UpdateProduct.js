@@ -16,7 +16,7 @@ const UpdateProduct = () => {
 
     const getProductDetails = async () =>{
         console.warn(params);
-        let result = await fetch(`http://localhost:5000/product/${params.id}`);
+        let result = await fetch(`https://e-dash-board-api.vercel.app/product/${params.id}`);
         result = await result.json();
         setName(result.name);
         setPrice(result.price);
@@ -25,7 +25,7 @@ const UpdateProduct = () => {
     }
     const updateProduct=async()=>{
         console.warn(name, price, category, company);
-        let result = await fetch(`http://localhost:5000/product/${params.id}`,{
+        let result = await fetch(`https://e-dash-board-api.vercel.app/product/${params.id}`,{
             method:'put',
             body:JSON.stringify({name, price, category, company}),
             headers:{
