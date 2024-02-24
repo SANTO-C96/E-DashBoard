@@ -12,7 +12,7 @@ const Login = () => {
     })
     const handleLogin= async()=>{
         console.log(email,password);
-        let result = await fetch('http://localhost:5000/login',{
+        let result = await fetch('https://e-dash-board-api.vercel.app/login',{
             method:'post',
             body:JSON.stringify({email,password}),
             headers: {
