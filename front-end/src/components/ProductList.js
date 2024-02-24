@@ -9,7 +9,7 @@ const ProductList = () => {
     }, [])
 
     const getProducts = async () =>{
-        let result = await fetch('http://localhost:5000/products',{
+        let result = await fetch('https://e-dash-board-api.vercel.app/products',{
             headers:{
                 authorization: JSON.parse(localStorage.getItem('token'))
             }
@@ -18,7 +18,7 @@ const ProductList = () => {
         setProducts(result);
     }
      const deleteProduct = async(id)=>{
-        let result = await fetch(`http://localhost:5000/product/${id}`,{
+        let result = await fetch(`https://e-dash-board-api.vercel.app/product/${id}`,{
             method:"Delete"
         });
         result = await result.json()
